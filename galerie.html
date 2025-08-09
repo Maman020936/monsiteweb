@@ -3,79 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mon Site</title>
+  <title>Galerie VIP - Mon Site</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-white text-gray-800">
+<body class="bg-gray-100">
 
-  <!-- En-tête / Navigation -->
-  <header class="bg-blue-600 text-white p-4">
-    <nav class="container mx-auto flex justify-between items-center">
-      <h1 class="text-xl font-bold">Mon Site</h1>
-      <ul class="flex space-x-6">
-        <li><a href="#accueil" class="hover:underline">Accueil</a></li>
-        <li><a href="#services" class="hover:underline">Services</a></li>
-        <li><a href="#apropos" class="hover:underline">À propos</a></li>
-        <li><a href="#contact" class="hover:underline">Contact</a></li>
-        <li><a href="galerie.html" class="hover:underline font-semibold">Galerie VIP</a></li>
-      </ul>
-    </nav>
-  </header>
+  <section id="galerie" class="py-16 bg-gray-100">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-4xl font-bold mb-6">Galerie VIP</h1>
+      <p class="mb-4">Accès réservé aux abonnés. Entrez le mot de passe :</p>
+      <input type="password" id="passwordInput" placeholder="Mot de passe"
+        class="border p-2 rounded mb-4" />
+      <button onclick="checkPassword()" 
+        class="bg-blue-500 text-white px-4 py-2 rounded">Valider</button>
 
-  <!-- Section Accueil -->
-  <section id="accueil" class="py-20 bg-gray-100 text-center">
-    <h2 class="text-4xl font-bold mb-4">Bienvenue sur mon site</h2>
-    <p class="max-w-2xl mx-auto">Découvrez mes services et contactez-moi facilement.</p>
-  </section>
-
-  <!-- Section Services -->
-  <section id="services" class="py-20">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold mb-8 text-center">Services</h2>
-      <!-- Tes descriptions de services ici -->
-      <p class="text-center">Mes services arrivent bientôt !</p>
+      <div id="galerieContent" class="mt-6 hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <!-- Photo 1 -->
+        <img src="https://drive.google.com/uc?export=view&id=1_WwPmkU_JKijtrU_j9dWht4QdqJgzDeA" 
+             alt="Photo VIP 1" class="rounded shadow-lg" />
+        <!-- Ajoute ici d'autres photos -->
+      </div>
     </div>
   </section>
 
-  <!-- Section À propos -->
-  <section id="apropos" class="py-20 bg-gray-100">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold mb-8 text-center">À propos de moi</h2>
-      <p class="max-w-3xl mx-auto text-center">
-        Je suis Antoine, passionné par le web et prêt à vous accompagner dans vos projets.
-      </p>
-    </div>
-  </section>
-
-  <!-- Section Contact -->
-  <section id="contact" class="py-20">
-    <div class="container mx-auto px-4 max-w-lg mx-auto">
-      <h2 class="text-3xl font-bold mb-8 text-center">Contactez-moi</h2>
-      <form action="https://formspree.io/f/xanbaned" method="POST" class="bg-white p-8 rounded-lg shadow-lg">
-        <div class="mb-4">
-          <label for="name" class="block mb-2 font-semibold">Nom</label>
-          <input type="text" id="name" name="name" required
-            class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" />
-        </div>
-        <div class="mb-4">
-          <label for="email" class="block mb-2 font-semibold">Email</label>
-          <input type="email" id="email" name="email" required
-            class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" />
-        </div>
-        <div class="mb-6">
-          <label for="message" class="block mb-2 font-semibold">Message</label>
-          <textarea id="message" name="message" rows="5" required
-            class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"></textarea>
-        </div>
-        <button type="submit"
-          class="w-full bg-blue-600 text-white py-3 rounded hover:bg-blue-700 transition">Envoyer</button>
-      </form>
-    </div>
-  </section>
-
-  <footer class="bg-gray-200 py-6 text-center">
-    <p>© 2025 Antoine Bounameaux. Tous droits réservés.</p>
-  </footer>
+  <script>
+    function checkPassword() {
+      const password = document.getElementById("passwordInput").value;
+      if (password === "vip2025") { // change le mot de passe ici
+        document.getElementById("galerieContent").classList.remove("hidden");
+      } else {
+        alert("Mot de passe incorrect !");
+      }
+    }
+  </script>
 
 </body>
 </html>
