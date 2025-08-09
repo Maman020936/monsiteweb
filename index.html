@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MonSite - Accueil</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <header class="bg-white shadow sticky top-0 z-50">
+    <nav class="container mx-auto flex justify-between items-center p-4">
+      <div class="text-xl font-bold">MonSite</div>
+      <ul class="flex space-x-6">
+        <li><a href="#accueil" class="hover:text-blue-600">Accueil</a></li>
+        <li><a href="#services" class="hover:text-blue-600">Services</a></li>
+        <li><a href="#apropos" class="hover:text-blue-600">À propos</a></li>
+        <li><a href="#contact" class="hover:text-blue-600">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="accueil" class="min-h-screen flex items-center justify-center bg-blue-100">
+    <h1 class="text-5xl font-extrabold">Bienvenue sur MonSite</h1>
+  </section>
+
+  <section id="services" class="container mx-auto py-16">
+    <h2 class="text-3xl font-bold mb-8">Services</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white p-6 rounded shadow">
+        <h3 class="font-semibold text-xl mb-4">Service 1</h3>
+        <p>Description du service 1.</p>
+      </div>
+      <div class="bg-white p-6 rounded shadow">
+        <h3 class="font-semibold text-xl mb-4">Service 2</h3>
+        <p>Description du service 2.</p>
+      </div>
+      <div class="bg-white p-6 rounded shadow">
+        <h3 class="font-semibold text-xl mb-4">Service 3</h3>
+        <p>Description du service 3.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="apropos" class="bg-white py-16">
+    <div class="container mx-auto max-w-3xl text-center">
+      <h2 class="text-3xl font-bold mb-6">À propos</h2>
+      <p>Quelques mots sur moi et mon projet.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="container mx-auto py-16">
+    <h2 class="text-3xl font-bold mb-6">Contact</h2>
+    <form id="contactForm" class="max-w-lg mx-auto space-y-4">
+      <input type="text" name="nom" placeholder="Nom" class="w-full p-3 border rounded" required />
+      <input type="email" name="email" placeholder="Email" class="w-full p-3 border rounded" required />
+      <textarea name="message" placeholder="Message" class="w-full p-3 border rounded" rows="4" required></textarea>
+      <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 w-full">Envoyer</button>
+    </form>
+    <p id="contactMessage" class="mt-4 text-center"></p>
+  </section>
+
+  <footer class="bg-gray-200 py-6 text-center text-sm text-gray-600">
+    &copy; 2025 MonSite - Tous droits réservés
+  </footer>
+
+  <script>
+    // Simple gestion du formulaire de contact (juste affichage d'un message)
+    const form = document.getElementById('contactForm');
+    const message = document.getElementById('contactMessage');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      message.textContent = 'Merci pour votre message, je vous recontacte bientôt !';
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>
