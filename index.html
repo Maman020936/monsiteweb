@@ -49,16 +49,33 @@
     </div>
   </section>
 
-  <section id="contact" class="container mx-auto py-16">
-    <h2 class="text-3xl font-bold mb-6">Contact</h2>
-    <form id="contactForm" class="max-w-lg mx-auto space-y-4">
-      <input type="text" name="nom" placeholder="Nom" class="w-full p-3 border rounded" required />
-      <input type="email" name="email" placeholder="Email" class="w-full p-3 border rounded" required />
-      <textarea name="message" placeholder="Message" class="w-full p-3 border rounded" rows="4" required></textarea>
-      <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 w-full">Envoyer</button>
+  <section id="contact" class="py-12 bg-gray-100">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-8">Contactez-moi</h2>
+    <form action="https://formspree.io/f/xanbaned" method="POST" class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-lg">
+      <div class="mb-4">
+        <label for="name" class="block text-gray-700">Nom</label>
+        <input type="text" id="name" name="name" required
+               class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+      </div>
+      <div class="mb-4">
+        <label for="email" class="block text-gray-700">Email</label>
+        <input type="email" id="email" name="email" required
+               class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+      </div>
+      <div class="mb-4">
+        <label for="message" class="block text-gray-700">Message</label>
+        <textarea id="message" name="message" rows="5" required
+                  class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"></textarea>
+      </div>
+      <button type="submit"
+              class="w-full bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
+        Envoyer
+      </button>
     </form>
-    <p id="contactMessage" class="mt-4 text-center"></p>
-  </section>
+  </div>
+</section>
+
 
   <footer class="bg-gray-200 py-6 text-center text-sm text-gray-600">
     &copy; 2025 MonSite - Tous droits réservés
