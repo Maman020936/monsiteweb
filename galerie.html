@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Galerie VIP - Mon Site</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+  <section id="galerie" class="py-16 bg-gray-100">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-4xl font-bold mb-6">Galerie VIP</h1>
+      <p class="mb-4">Accès réservé aux abonnés. Entrez le mot de passe :</p>
+      <input type="password" id="passwordInput" placeholder="Mot de passe"
+        class="border p-2 rounded mb-4" />
+      <button onclick="checkPassword()" 
+        class="bg-blue-500 text-white px-4 py-2 rounded">Valider</button>
+
+      <div id="galerieContent" class="mt-6 hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <!-- Photo 1 -->
+        <img src="https://drive.google.com/uc?export=view&id=1_WwPmkU_JKijtrU_j9dWht4QdqJgzDeA" 
+             alt="Photo VIP 1" class="rounded shadow-lg" />
+        <!-- Ajoute ici d'autres photos -->
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function checkPassword() {
+      const password = document.getElementById("passwordInput").value;
+      if (password === "vip2025") { // change le mot de passe ici
+        document.getElementById("galerieContent").classList.remove("hidden");
+      } else {
+        alert("Mot de passe incorrect !");
+      }
+    }
+  </script>
+
+</body>
+</html>
